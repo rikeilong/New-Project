@@ -12,6 +12,9 @@ public static class Global
     static public GameObject BG;
     static public Transform blackBound;
     static public Transform whiteBound;
+    static public Transform bAwBound;
+    static public GameObject bAwUp;
+    static public GameObject bAwDown;
 
     static public class level1
     {

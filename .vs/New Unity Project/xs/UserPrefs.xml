@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{B2B58FB2-4462-6B0C-A872-40DD957E5FE0}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SceneControl.cs">
     <Files>
-      <File FileName="Assets/Scripts/Global.cs" Line="9" Column="40" />
-      <File FileName="Assets/Scripts/SceneControl.cs" />
-      <File FileName="Assets/Scripts/PlayerController.cs" />
-      <File FileName="Assets/Scripts/GravityReverse.cs" />
+      <File FileName="Assets/Scripts/Global.cs" Line="15" Column="32" />
+      <File FileName="Assets/Scripts/SceneControl.cs" Line="50" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="16" Column="9" />
+      <File FileName="Assets/Scripts/GravityReverse.cs" Line="17" Column="66" />
       <File FileName="Assets/Scripts/LevelController.cs" Line="4" Column="13" />
-      <File FileName="../../Downloads/New-Project-master/Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

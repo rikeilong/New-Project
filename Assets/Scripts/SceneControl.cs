@@ -22,6 +22,9 @@ public class SceneControl : MonoBehaviour
         Global.playerRb = Global.player.GetComponent<Rigidbody2D>();
         Global.whiteBound = GameObject.Find("WhiteBound").transform;
         Global.blackBound = GameObject.Find("BlackBound").transform;
+        Global.bAwBound = GameObject.Find("BlackAndWhiteBound").transform;
+        Global.bAwUp = GameObject.Find("BlackandWhite");
+        Global.bAwDown = GameObject.Find("BlackandWhite2");
         //white = GameObject.Find("white").GetComponent<Renderer>().material.color;
         //black = GameObject.Find("black").GetComponent<Renderer>().material.color;
         //build = GameObject.Find("building").GetComponent<Renderer>().material;
@@ -41,6 +44,9 @@ public class SceneControl : MonoBehaviour
             //Physics.gravity = targetGravity;
         }
         //cameraMove();
+        PlayerUpAndDown();
+        BlackAndWhiteUpAndDown();
+        Global.bAwDown.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;//不可删
 
     }
 
@@ -50,6 +56,31 @@ public class SceneControl : MonoBehaviour
          Camera.main.transform.position = new Vector3(Global.player.transform.position.x, Global.player.transform.position.y, Camera.main.transform.position.z);
 
     }
+
+    void PlayerUpAndDown()
+    {
+        if (Global.player.transform.position.y < Global.bAwBound.position.y)
+        {
+            Global.player.GetComponent<GravityReverse>().enabled = true;
+        }
+        if (Global.player.transform.position.y > Global.bAwBound.position.y)
+        {
+            Global.player.GetComponent<GravityReverse>().enabled = false;
+        }
+    }
+
+    void BlackAndWhiteUpAndDown()
+    {
+        if(Global.bAwDown.transform.position.y < Global.bAwBound.position.y - 1.0f)
+        {
+            Global.bAwDown.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+            Global.bAwDown.GetComponent<GravityReverse>().enabled = true;
+        }
+        if (Global.bAwDown.transform.position.y > Global.bAwBound.position.y + 0.5f)
+        {
+            Global.bAwDown.GetComponent<GravityReverse>().enabled = false;
+        }
+    }
     IEnumerator ReverseBGandPlayer()
     {
         if (Global.isBlack)
@@ -58,7 +89,6 @@ public class SceneControl : MonoBehaviour
             //build.SetColor("_Color", white);
             Global.player.transform.DOMoveY(targetPlayerPos, 0.5f);
             yield return new WaitForSeconds(0.5f);
-            Global.player.GetComponent<GravityReverse>().enabled = true;
             Global.isBlack = false;
         }
         else
@@ -67,7 +97,6 @@ public class SceneControl : MonoBehaviour
             //build.SetColor("_Color", white);
             Global.player.transform.DOMoveY(targetPlayerPos, 0.5f);
             yield return new WaitForSeconds(0.5f);
-            Global.player.GetComponent<GravityReverse>().enabled = false;
             Global.isBlack = true;
         }
     }

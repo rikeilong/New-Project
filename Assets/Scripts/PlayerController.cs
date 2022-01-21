@@ -13,14 +13,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //如果黑色世界重力为1，否则为-1
-        if (!Global.isBlack)
-        {
-            Global.playerRb.gravityScale = -1;
-        }
-        else
-        {
-            Global.playerRb.gravityScale = 1;
-        }
+        
 
         horizantal = Input.GetAxis("Horizontal");
         transform.Translate(horizantal * Vector2.right * moveSpeed * Time.fixedDeltaTime);
