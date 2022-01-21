@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{49b61778-6c31-4946-ddb7-99d2d7e77dc5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{a0924926-8c23-93d9-75bf-293e6946e8c5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllIn1SpriteShaderAssembly", "AllIn1SpriteShaderAssembly.csproj", "{1009e37a-55f9-d16d-fd58-1212b364cc8e}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49b61778-6c31-4946-ddb7-99d2d7e77dc5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49b61778-6c31-4946-ddb7-99d2d7e77dc5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a0924926-8c23-93d9-75bf-293e6946e8c5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a0924926-8c23-93d9-75bf-293e6946e8c5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1009e37a-55f9-d16d-fd58-1212b364cc8e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1009e37a-55f9-d16d-fd58-1212b364cc8e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

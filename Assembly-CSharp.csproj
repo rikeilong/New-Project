@@ -711,6 +711,10 @@
       <Project>{a0924926-8c23-93d9-75bf-293e6946e8c5}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="AllIn1SpriteShaderAssembly.csproj">
+      <Project>{1009e37a-55f9-d16d-fd58-1212b364cc8e}</Project>
+      <Name>AllIn1SpriteShaderAssembly</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
