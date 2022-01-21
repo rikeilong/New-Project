@@ -1,45 +1,49 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-//public class PlayerController : MonoBehaviour
-//{
-//    private int lastKey = 100;//��¼��һ�ΰ��µİ�ť
-//    // Start is called before the first frame update
-//    void Start()
-//    {
+public class PlayerController : MonoBehaviour
+{
+    private float horizantal;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float jumpFoeceW;
+    [SerializeField] private float jumpFoeceB;
+    private bool isGround = true;
 
-//    }
+    private void FixedUpdate()
+    {
+        //如果黑色世界重力为1，否则为-1
+        if (!Global.isBlack)
+        {
+            Global.playerRb.gravityScale = -1;
+        }
+        else
+        {
+            Global.playerRb.gravityScale = 1;
+        }
 
-//    // Update is called once per frame
-//    void Update()
-//    {
-//        //��ת
-//        if (Input.GetKeyDown(KeyCode.W))
-//        {
-//            this.GetComponent<Rigidbody>().AddForce(new Vector3(0, 1, 0) * 280.0f);
-//        }
-//        //ǰ��
-//        if (Input.GetKey(KeyCode.D))
-//        {
-//            this.transform.Translate(new Vector3(1, 0, 0) * Time.deltaTime * 5, Space.World);
-//            //�ж��Ƿ���Ҫ��ͷ
-//            if (lastKey != (int)KeyCode.D)
-//            {
-//                this.transform.Rotate(0, 180, 0);
-//            }
-//            lastKey = (int)KeyCode.D;
-//        }
-//        //����
-//        if (Input.GetKey(KeyCode.A))
-//        {
-//            this.transform.Translate(new Vector3(-1, 0, 0) * Time.deltaTime * 5, Space.World);
-//            //�ж��Ƿ���Ҫ��ͷ
-//            if (lastKey != (int)KeyCode.A)
-//            {
-//                this.transform.Rotate(0, 180, 0);
-//            }
-//            lastKey = (int)KeyCode.A;
-//        }
-//    }
-//}
+        horizantal = Input.GetAxis("Horizontal");
+        transform.Translate(horizantal * Vector2.right * moveSpeed * Time.fixedDeltaTime);
+
+        if (Input.GetKeyDown(KeyCode.W) && Global.isBlack && isGround)
+        {
+            isGround = false;
+            Global.playerRb.AddForce(Vector2.up * jumpFoeceB, ForceMode2D.Impulse);
+        }
+        if (Input.GetKeyDown(KeyCode.S) && !Global.isBlack && isGround)
+        {
+            isGround = false;
+            Global.playerRb.AddForce(Vector2.down * jumpFoeceW, ForceMode2D.Impulse);
+        }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGround = true;
+            Debug.Log("sss");
+        }
+    }
+}
