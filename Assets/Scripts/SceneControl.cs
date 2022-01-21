@@ -19,7 +19,6 @@ public class SceneControl : MonoBehaviour
         Global.isBlack = true;
         Global.BG = GameObject.Find("BG");
         Global.player = GameObject.Find("player");
-        Global.playerRb = Global.player.GetComponent<Rigidbody2D>();
         Global.whiteBound = GameObject.Find("WhiteBound").transform;
         Global.blackBound = GameObject.Find("BlackBound").transform;
         //white = GameObject.Find("white").GetComponent<Renderer>().material.color;
@@ -40,7 +39,7 @@ public class SceneControl : MonoBehaviour
             //player.transform.DOMove(target, 0.5f);
             //Physics.gravity = targetGravity;
         }
-        //cameraMove();
+        cameraMove();
 
     }
 

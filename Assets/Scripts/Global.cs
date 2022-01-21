@@ -6,7 +6,6 @@ public static class Global
 {
     static public bool isBlack;
     static public GameObject player;
-    static public Rigidbody2D playerRb;
     static public GameObject white;
     static public GameObject black;
     static public GameObject BG;
